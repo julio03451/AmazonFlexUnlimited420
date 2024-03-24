@@ -157,7 +157,7 @@ class FlexUnlimited:
         self.desiredWeekdays = None
     
   def __generate_device(self):
-    self.device_serial = uuid.uuid4().hex.upper()
+    self.device_serial = secrets.token_hex(16)
     self.android_device_id = secrets.token_hex(8)
     
   def __generate_client_id(self) -> str:
