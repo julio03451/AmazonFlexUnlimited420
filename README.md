@@ -45,7 +45,7 @@ Click on the url and complete the two step verification challenge. After you get
 _Looking for Something?
 We're sorry. The Web address you entered is not a functioning page on our site_
 
-You have **successfully completed the two step verification challenge**. Go back to your terminal and re-run the program.
+You have **successfully completed the two step verification challenge**. Copy the URL in the address bar, go back to your terminal and paste the URL into the script.
 
 
 
