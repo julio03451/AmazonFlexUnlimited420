@@ -26,6 +26,7 @@ get_flex_version()
 with open("config.json") as configFile:
   config = json.load(configFile)
   androidflexversion = config["androidflexversion"]
+  useragent = config["useragent"]
 
 
 APP_NAME = "com.amazon.rabbit"
@@ -36,7 +37,7 @@ DEVICE_TYPE = "A1MPSLFC7L5AFK"
 OS_VERSION = "LeEco/Le2_NA/le_s2_na:6.0.1/IFXNAOP5801910272S/61:user/release-keys"
 MARKETPLACE = "ATVPDKIKX0DER"
 ANDROID_FLEX_VERSION = androidflexversion
-USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 7.1.2; SM-G988N Build/NRD90M)" # Put your user agent here
+USER_AGENT = useragent
 REFRESH_SIGNATURE_INTERVAL = 5 # Every 5 minutes
 
 class FlexUnlimited:
