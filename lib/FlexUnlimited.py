@@ -464,6 +464,11 @@ class FlexUnlimited:
       )
 
     serviceAreaPoolList = response.json().get("serviceAreaPoolList")
+    with open("serviceAreaIds", "w", encoding='utf-8') as s:
+      for serviceArea in serviceAreaPoolList:
+          Name = serviceArea["serviceAreaName"]
+          ID = serviceArea["serviceAreaId"]
+          print('{1}:{0}'.format(Name, ID), file=s)
     serviceAreasTable = PrettyTable()
     serviceAreasTable.field_names = ["Service Area Name", "Service Area ID"]
     for serviceArea in serviceAreaPoolList:
