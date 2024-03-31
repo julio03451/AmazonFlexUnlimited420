@@ -20,4 +20,6 @@
   "flexInstanceId": "",
   "keyId": "",
   "keyIdExpiration": null,
+  "androidflexversion": "3.104.1.39.0",
+  "useragent": "Dalvik/2.1.0 (Linux; U; Android 8.0.0; SM-G965F Build/R16NW)"
 }
