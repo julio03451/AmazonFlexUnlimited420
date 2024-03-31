@@ -112,7 +112,7 @@ scripts = ["app"]
 for script in scripts:
     app.add_script(script)
 
-scriptsn = ["Settings", "GetServiceAreas"]
+scriptsn = ["Settings", "GetServiceAreas", "Choose_Stations"]
 
 for script in scriptsn:
     app.add_script(script, has_stop_button=False)

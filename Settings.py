@@ -9,8 +9,7 @@ def load_config():
             config = json.load(file)
             # Select only the desired keys
             desired_keys = [
-                "minBlockRate", "minPayRatePerHour", "arrivalBuffer",
-                "desiredWarehouses", "desiredStartTime", "desiredEndTime",
+                "minBlockRate", "minPayRatePerHour", "arrivalBuffer", "desiredStartTime", "desiredEndTime",
                 "desiredWeekdays", "retryLimit", "refreshInterval",
                 "twilioAcctSid", "twilioAuthToken", "twilioFromNumber", "twilioToNumber"
             ]
@@ -79,7 +78,6 @@ custom_labels = {
     "minBlockRate": "Minimum Block Rate:",
     "minPayRatePerHour": "Minimum Pay Rate per Hour:",
     "arrivalBuffer": "Arrival Buffer:",
-    "desiredWarehouses": "Desired Warehouses:",
     "desiredStartTime": "Desired Start Time:",
     "desiredEndTime": "Desired End Time:",
     "desiredWeekdays": "Desired Weekdays:",
