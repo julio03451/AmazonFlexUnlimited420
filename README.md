@@ -1,4 +1,4 @@
-# Flex Unlimited 420 #
+# Flex Unlimited 420 + Script Dock #
 
 ## Automate searching and accepting Amazon Flex Driver jobs ##
 
@@ -19,9 +19,9 @@ ALL DONE VIA Script_Dock.py just double click
 2. Install dependencies using **pip**: `pip install -r requirements.txt`.
 3. Double click **Script_Dock.py**, you will need to click **Start app** to go through the sign in steps. copy the link to a browser, sign in, and when you get to 'looking for something' copy the URL from the address bar back into the terminal
 4. Click **GetServiceAreas**. This will pull your eligible stations, which you can use **Choose_Stations** to select the stations you want to filter for, then click generate. If you don't want to filter certain stations you can skip this.
-5. Optionally, setup SMS notifications of Amazon Flex job acceptances by filling out the `twilio` parameters in  Settings.
-6. Click **Settings**, and adjust to your liking, then click save.
-7. Click **Start app** when you are ready. you can wait for it to run through it's refreshes or stop it early with **Stop app**
+5. Click **Settings**, and adjust to your liking, then click save. Optionally, setup SMS notifications of Amazon Flex job acceptances by filling out the `twilio` parameters in  Settings.
+7. Optionally, you may also change the UserAgent the script is identifying as by clicking **Set_User_Agent**
+8. Click **Start app** when you are ready. you can wait for it to run through it's refreshes or stop it early with **Stop app**
 
 
 
