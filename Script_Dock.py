@@ -40,10 +40,10 @@ class App:
         global python
         python = self.python_listbox.get(index)
         
-    def add_script(self, script_name, has_stop_button=True):
+    def add_script(self, script_name, has_stop_button=True, *args):
         # Create a start button for the script
         start_button_text = f"Start {script_name}" if has_stop_button else f"{script_name}"
-        start_button = ttk.Button(self.button_frame, text=start_button_text, command=lambda: self.start(script_name))
+        start_button = ttk.Button(self.button_frame, text=start_button_text, command=lambda: self.start(script_name, *args))
         start_button.pack(side="top")
             
         if has_stop_button:
@@ -54,6 +54,7 @@ class App:
         # Add the script to the list of scripts
         self.scripts.append({
             "name": script_name,
+            "args": args,
             "process": None,
             "thread": None,
             "stopped": False
@@ -111,7 +112,7 @@ scripts = ["app"]
 for script in scripts:
     app.add_script(script)
 
-scriptsn = ["Settings"]
+scriptsn = ["Settings", "GetServiceAreas"]
 
 for script in scriptsn:
     app.add_script(script, has_stop_button=False)
