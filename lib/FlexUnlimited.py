@@ -19,6 +19,16 @@ try:
 except:
   pass
 
+from getflexversion import get_flex_version
+
+get_flex_version()
+
+with open("config.json") as configFile:
+  config = json.load(configFile)
+  androidflexversion = config["androidflexversion"]
+  useragent = config["useragent"]
+
+
 APP_NAME = "com.amazon.rabbit"
 APP_VERSION = "303338310"
 DEVICE_NAME = "Le X522"
@@ -26,8 +36,8 @@ MANUFACTURER = "LeMobile"
 DEVICE_TYPE = "A1MPSLFC7L5AFK"
 OS_VERSION = "LeEco/Le2_NA/le_s2_na:6.0.1/IFXNAOP5801910272S/61:user/release-keys"
 MARKETPLACE = "ATVPDKIKX0DER"
-ANDROID_FLEX_VERSION = "3.104.1.39.0"
-USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 7.1.2; SM-G988N Build/NRD90M)" # Put your user agent here
+ANDROID_FLEX_VERSION = androidflexversion
+USER_AGENT = useragent
 REFRESH_SIGNATURE_INTERVAL = 5 # Every 5 minutes
 
 class FlexUnlimited:
@@ -464,6 +474,11 @@ class FlexUnlimited:
       )
 
     serviceAreaPoolList = response.json().get("serviceAreaPoolList")
+    with open("serviceAreaIds", "w", encoding='utf-8') as s:
+      for serviceArea in serviceAreaPoolList:
+          Name = serviceArea["serviceAreaName"]
+          ID = serviceArea["serviceAreaId"]
+          print('{1}:{0}'.format(Name, ID), file=s)
     serviceAreasTable = PrettyTable()
     serviceAreasTable.field_names = ["Service Area Name", "Service Area ID"]
     for serviceArea in serviceAreaPoolList:

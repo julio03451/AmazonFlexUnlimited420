@@ -1,4 +1,5 @@
-# Flex Unlimited 420 #
+# Flex Unlimited 420 + Script Dock #
+
 
 ## Automate searching and accepting Amazon Flex Driver jobs ##
 
@@ -12,40 +13,16 @@ This is an attempt to automate picking up Amazon Flex driver jobs. I attempted t
 
 ## Usage ##
 
+ALL DONE VIA Script_Dock.py just double click
+
 0. You MUST have python 3 installed. Versions below 3 will not work.  
 1. Clone the repo to the machine you will be using to run the program (machine should be connected to Internet by wire for best results).
 2. Install dependencies using **pip**: `pip install -r requirements.txt`.
-3. Set `username` and `password` in **config.json**.
-4. Modify the remainder of **config.json** to meet your job search requirements. It already comes with some defaults. Fill out `desiredWarehouses` if you would like to restrict your job search to certain warehouses. If you choose this option, 
-`desiredWarehouses` must be a list of strings of **internal warehouse ids**. Otherwise, leave `desiredWarehouses` as an empty list.
-5. Fill out the `desiredWeekdays` filter in **config.json** if you would like to restrict your job search to certain days of the week. Otherwise, you may leave `desiredWeekdays` as an empty list. `desiredWeekdays` must be a list of strings (case insensitive) corresponding to days of the week (i.e. "Sun", "monday", etc.). Each string must include at least the first three letters of the day.
-
-To determine the internal warehouse ids of warehouses you are eligible for, run the following command:
-`python3 app.py getAllServiceAreas` OR `python3 app.py --w`
-
-Here you will get a table of all the service areas (warehouses) that you are eligible for. The left column states the service area name, and the right column is the internal warehouse id used by Amazon. Copy all the service area ids you want to restrict your search to as strings into the **desiredWarehouses** field into the config.json. 
-
-e.g
-```
-{
-...
-"desiredWarehouses": ["9c332725-c1be-405f-87c5-e7def58595f6", "5fa41ec8-44ae-4e91-8e48-7be008d72e8a"]],
-...
-}
-```
-5. Optionally, setup SMS notifications of Amazon Flex job acceptances by filling out the `twilio` parameters in  **config.json**.
-6. Run `python app.py`. Alternatively, try `python3 app.py`.
-
-## Troubleshooting ##
-
-- Unable to authenticate to Amazon Flex. Please try completing the two step verification challenge at (url)
-
-Click on the url and complete the two step verification challenge. After you get to a page that says:
-
-_Looking for Something?
-We're sorry. The Web address you entered is not a functioning page on our site_
-
-You have **successfully completed the two step verification challenge**. Go back to your terminal and re-run the program.
+3. Double click **Script_Dock.py**, you will need to click **Start app** to go through the sign in steps. copy the link to a browser, sign in, and when you get to 'looking for something' copy the URL from the address bar back into the terminal
+4. Click **GetServiceAreas**. This will pull your eligible stations, which you can use **Choose_Stations** to select the stations you want to filter for, then click generate. If you don't want to filter certain stations you can skip this.
+5. Click **Settings**, and adjust to your liking, then click save. Optionally, setup SMS notifications of Amazon Flex job acceptances by filling out the `twilio` parameters in  Settings.
+7. Optionally, you may also change the UserAgent the script is identifying as by clicking **Set_User_Agent**
+8. Click **Start app** when you are ready. you can wait for it to run through it's refreshes or stop it early with **Stop app**
 
 
 
