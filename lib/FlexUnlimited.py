@@ -505,7 +505,7 @@ class FlexUnlimited:
         json={"offerId": offer.id})
       
     if request.status_code == 420:
-      self.register_attestation()
+      self.get_key_id()
       self.__updateFlexHeaders(self.__acceptHeaders)
       self.sign_accept_headers()
       request = self.session.post(
